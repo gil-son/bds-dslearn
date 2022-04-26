@@ -1,0 +1,82 @@
+package com.devsuperior.dslearnbds.entities;
+
+import org.hibernate.annotations.ManyToAny;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.Objects;
+
+
+@Entity
+@Table(name = "tb_offer")
+public class Offer implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String edition;
+    private Instant startMoment;
+    private Instant endMoment;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Course course;
+
+
+    public void Offer(){}
+
+    public Offer(Long id, String edition, Instant startMoment, Instant endMoment) {
+        this.id = id;
+        this.edition = edition;
+        this.startMoment = startMoment;
+        this.endMoment = endMoment;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getEdition() {
+        return edition;
+    }
+
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
+
+    public Instant getStartMoment() {
+        return startMoment;
+    }
+
+    public void setStartMoment(Instant startMoment) {
+        this.startMoment = startMoment;
+    }
+
+    public Instant getEndMoment() {
+        return endMoment;
+    }
+
+    public void setEndMoment(Instant endMoment) {
+        this.endMoment = endMoment;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Offer offer = (Offer) o;
+        return id.equals(offer.id) && Objects.equals(edition, offer.edition) && Objects.equals(startMoment, offer.startMoment) && Objects.equals(endMoment, offer.endMoment);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, edition, startMoment, endMoment);
+    }
+}
+
