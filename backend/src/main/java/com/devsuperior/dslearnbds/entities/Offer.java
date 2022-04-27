@@ -5,6 +5,8 @@ import org.hibernate.annotations.ManyToAny;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -24,6 +26,8 @@ public class Offer implements Serializable {
     @JoinColumn(name = "course_id")
     private Course course;
 
+    @OneToMany(mappedBy = "offer") // 'offer' is the oposito of the 'resource'
+    private List<Resource> resources = new ArrayList<>();
 
     public void Offer(){}
 
@@ -65,6 +69,12 @@ public class Offer implements Serializable {
     public void setEndMoment(Instant endMoment) {
         this.endMoment = endMoment;
     }
+
+    public Course getCourse() { return course;}
+
+    public void setCourse(Course course) {this.course = course;}
+
+    public List<Resource> getResources() {return resources;}
 
     @Override
     public boolean equals(Object o) {
