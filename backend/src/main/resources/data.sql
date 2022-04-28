@@ -22,6 +22,9 @@ INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) 
 INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) VALUES('Forum', 'Take your doubts', 2, 'https://cdn.pixabay.com/photo/2020/05/31/09/30/online-course-5241968_1280.jpg', 2, 1);
 INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) VALUES('Lives', 'Exclusive lives for the class', 3, 'https://cdn.pixabay.com/photo/2020/05/31/09/30/online-course-5241968_1280.jpg', 0, 1);
 
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES('Chapter 1', 'In this chapter we will start', 1, 'https://cdn.pixabay.com/photo/2020/05/31/09/30/online-course-5241968_1280.jpg', 1, null); -- first chapter don't require prerequisite
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES('Chapter 2', 'In this chapter we will continued', 2, 'https://cdn.pixabay.com/photo/2020/05/31/09/30/online-course-5241968_1280.jpg', 1, 1); -- second chapter require the chapter first how prerequisite
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES('Chapter 3', 'In this chapter we will conclude', 3, 'https://cdn.pixabay.com/photo/2020/05/31/09/30/online-course-5241968_1280.jpg', 1, 2); -- third chapter require the chapter second how prerequisite
 
 
 
