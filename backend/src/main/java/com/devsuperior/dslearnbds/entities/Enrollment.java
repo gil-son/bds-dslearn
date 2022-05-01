@@ -1,6 +1,6 @@
 package com.devsuperior.dslearnbds.entities;
 
-import com.devsuperior.dslearnbds.pk.EnrollmentPK;
+import com.devsuperior.dslearnbds.entities.pk.EnrollmentPK;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
