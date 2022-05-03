@@ -26,7 +26,8 @@ INSERT INTO tb_section (title, description, position, img_uri, resource_id, prer
 INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES('Chapter 2', 'In this chapter we will continued', 2, 'https://cdn.pixabay.com/photo/2020/05/31/09/30/online-course-5241968_1280.jpg', 1, 1); -- second chapter require the chapter first how prerequisite
 INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES('Chapter 3', 'In this chapter we will conclude', 3, 'https://cdn.pixabay.com/photo/2020/05/31/09/30/online-course-5241968_1280.jpg', 1, 2); -- third chapter require the chapter second how prerequisite
 
-
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2020-11-20T013:00:00Z', null, true, false);
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (2, 1, TIMESTAMP WITH TIME ZONE '2020-11-20T013:00:00Z', null, true, false);
 
 
 
