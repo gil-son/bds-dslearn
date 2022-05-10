@@ -1,8 +1,12 @@
 package com.devsuperior.dslearnbds.entities;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.Instant;
 
+@Entity
+@Table(name = "tb_task")
 public class Task extends Lesson{
     private static final long serialVersionID = 1L;
 

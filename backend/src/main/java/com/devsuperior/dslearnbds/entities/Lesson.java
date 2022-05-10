@@ -29,7 +29,7 @@ public abstract class Lesson implements Serializable {
     // show the student done each lesson
 
     @ManyToMany
-    @JoinTable(name = "tb_user_role",
+    @JoinTable(name = "tb_lessons_done",
             joinColumns = @JoinColumn(name = "lesson_id"),
             inverseJoinColumns = {
                 @JoinColumn(name = "user_id"), // fk is compost pk

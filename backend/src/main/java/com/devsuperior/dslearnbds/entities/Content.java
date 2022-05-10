@@ -1,7 +1,11 @@
 package com.devsuperior.dslearnbds.entities;
 
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "tb_content")
 public class Content extends Lesson{
     private static final long serialVersionID = 1L;
 
