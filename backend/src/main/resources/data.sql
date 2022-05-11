@@ -33,6 +33,33 @@ INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, avai
 
 
 
+INSERT INTO tb_lesson(title, position, section_id) VALUES('Lesson 1 from Chapter 1', 1, 1);
+-- content of the lesson
+INSERT INTO tb_content(id,text_content, video_Uri) VALUES( 1 , 'Support material', 'https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n');
+
+INSERT INTO tb_lesson(title, position, section_id) VALUES('Lesson 2 from Chapter 1', 1, 1);
+-- content of the lesson
+INSERT INTO tb_content(id,text_content, video_Uri) VALUES( 2, 'Support material', 'https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n');
+
+
+INSERT INTO tb_lesson(title, position, section_id) VALUES('Lesson 3 from Chapter 1', 2, 1);
+-- content of the lesson
+INSERT INTO tb_content(id,text_content, video_Uri) VALUES( 3, 'Support material', 'https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n');
+
+
+INSERT INTO tb_lesson(title, position, section_id) VALUES('Task 1 from Chapter 1', 4, 1);
+-- task of the lesson
+INSERT INTO tb_task(id,description, question_Count, approval_Count, weight, due_Date) VALUES( 4, 'do the work 1', 5, 4, 1.0, TIMESTAMP WITH TIME ZONE '2020-11-25T013:00:00Z');
+
+
+
+
+
+
+
+
+
+
 
 
 
