@@ -51,8 +51,8 @@ INSERT INTO tb_lesson(title, position, section_id) VALUES('Task 1 from Chapter 1
 -- task of the lesson
 INSERT INTO tb_task(id,description, question_Count, approval_Count, weight, due_Date) VALUES( 4, 'do the work 1', 5, 4, 1.0, TIMESTAMP WITH TIME ZONE '2020-11-25T013:00:00Z');
 
-
-
+INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES(1, 1, 1);
+INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES(2, 1, 1);
 
 
 
