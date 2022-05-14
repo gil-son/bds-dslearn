@@ -60,6 +60,7 @@ INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Second
 INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Third task feedback: please review', TIMESTAMP WITH TIME ZONE '2020-12-14T13:00:00Z', true, '/offers/1/resource/1/sections/1', 1);
 
 
+INSERT INTO tb_deliver (uri, moment, status, feedback, correct_Count, lesson_id, user_id, offer_id) VALUES ('https://github.com/devsuperior/bds-dslearn', TIMESTAMP WITH TIME ZONE '2020-12-10T10:00:00Z', 0, null, null, 4, 1, 1);
 
 
 
