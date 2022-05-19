@@ -74,7 +74,10 @@ INSERT INTO tb_topic(title, body, moment, author_id, offer_id, lesson_id) VALUES
 INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (1, 2);
 INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (2, 1);
 
+INSERT INTO tb_reply (body, moment, topic_id, author_id) VALUES ('Try restarting the computer', TIMESTAMP WITH TIME ZONE '2020-12-15T13:00:00Z', 1, 2);
+INSERT INTO tb_reply (body, moment, topic_id, author_id) VALUES ('It worked, thanks!', TIMESTAMP WITH TIME ZONE '2020-12-20T13:00:00Z', 1, 1);
 
+INSERT INTO tb_reply_likes (reply_id, user_id) VALUES (1, 1); -- User cannot 'like' himself, so the like is user 1 and not user 2 that created the question
 
 
 
