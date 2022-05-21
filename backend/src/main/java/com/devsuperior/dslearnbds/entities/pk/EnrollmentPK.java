@@ -46,15 +46,33 @@ public class EnrollmentPK implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        EnrollmentPK that = (EnrollmentPK) o;
-        return user.equals(that.user) && offer.equals(that.offer);
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((offer == null) ? 0 : offer.hashCode());
+        result = prime * result + ((user == null) ? 0 : user.hashCode());
+        return result;
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(user, offer);
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        EnrollmentPK other = (EnrollmentPK) obj;
+        if (offer == null) {
+            if (other.offer != null)
+                return false;
+        } else if (!offer.equals(other.offer))
+            return false;
+        if (user == null) {
+            if (other.user != null)
+                return false;
+        } else if (!user.equals(other.user))
+            return false;
+        return true;
     }
 }

@@ -33,6 +33,9 @@ public class Offer implements Serializable {
     @OneToMany(mappedBy = "offer") // 'offer' is the oposito of the 'resource'
     private List<Resource> resources = new ArrayList<>();
 
+    @OneToMany(mappedBy = "offer")
+    private List<Topic> topics = new ArrayList<>();
+
     public void Offer(){}
 
     public Offer(Long id, String edition, Instant startMoment, Instant endMoment) {
@@ -80,17 +83,31 @@ public class Offer implements Serializable {
 
     public List<Resource> getResources() {return resources;}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Offer offer = (Offer) o;
-        return id.equals(offer.id) && Objects.equals(edition, offer.edition) && Objects.equals(startMoment, offer.startMoment) && Objects.equals(endMoment, offer.endMoment);
-    }
+    public List<Topic> getTopics() {return topics;}
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, edition, startMoment, endMoment);
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Offer other = (Offer) obj;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        return true;
     }
 }
 
