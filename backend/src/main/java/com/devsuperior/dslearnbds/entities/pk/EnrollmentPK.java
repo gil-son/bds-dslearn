@@ -7,7 +7,7 @@ import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
-import java.util.Objects;
+
 
 // This annotation is because this class is define attributes to other class can be used. Can be use to any composite attribute
 @Embeddable
