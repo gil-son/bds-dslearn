@@ -3,17 +3,17 @@ package com.devsuperior.dslearnbds.resources.exceptions;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class ValidationError extends StandardError {
 	private static final long serialVersionUID = 1L;
-	
-	List<FieldMessage> listErrors = new ArrayList<>();
-	
-	public List<FieldMessage> getListErrors() {
-		return listErrors;
+
+	private List<FieldMessage> errors = new ArrayList<>();
+
+	public List<FieldMessage> getErrors() {
+		return errors;
 	}
 
-	public void addErrors(String fieldError, String message) {
-		listErrors.add(new FieldMessage(fieldError, message));
+	public void addError(String fieldName, String message) {
+		errors.add(new FieldMessage(fieldName, message));
 	}
-	
 }
