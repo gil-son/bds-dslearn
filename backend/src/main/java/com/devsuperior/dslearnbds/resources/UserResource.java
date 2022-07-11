@@ -14,7 +14,6 @@ import com.devsuperior.dslearnbds.services.UserService;
 
 @RestController
 @RequestMapping(value = "/users")
-
 public class UserResource {
 
     private static Logger logger = LoggerFactory.getLogger(UserService.class);
@@ -22,17 +21,10 @@ public class UserResource {
     @Autowired
     private UserService service;
 
-//    @GetMapping(value = "/{id}")
-//    public ResponseEntity<UserDTO> findById(@PathVariable Long id){
-//        UserDTO dto = service.findById(id);
-//        return ResponseEntity.ok().body(dto);
-//    }
-
-
     @GetMapping(value = "/{id}")
     public ResponseEntity<UserDTO> findById(@PathVariable Long id){
         UserDTO dto = service.findById(id);
-        logger.info("DTO: ", dto);
+        logger.info("DTO: {} ", dto);
         return ResponseEntity.ok().body(dto);
     }
 }
