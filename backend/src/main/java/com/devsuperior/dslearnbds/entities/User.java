@@ -128,4 +128,14 @@ public class User implements UserDetails, Serializable {
         // TODO Auto-generated method stub
         return true;
     }
+
+    // Verify the roles. Case roleName is equals, return true and cause not exist return false
+    public boolean hasHole(String roleName){
+        for(Role role : roles){
+            if(role.getAuthority().equals(roleName)){
+                return true;
+            }
+        }
+        return false;
+    }
 }
