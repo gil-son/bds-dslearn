@@ -31,7 +31,7 @@ public class UserService implements UserDetailsService{
     @Transactional(readOnly = true)
     public UserDTO findById(Long id) {
 
-        // validate, case true, Of, case false, exception is launched and pause the code execution
+        // validate, case true, pass, case false, exception is launched and pause the code execution
         authService.validateSelfOrAdmin(id);
 
         Optional<User> obj = repository.findById(id);
