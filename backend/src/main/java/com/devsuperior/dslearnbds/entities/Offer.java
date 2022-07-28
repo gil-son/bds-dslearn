@@ -36,7 +36,7 @@ public class Offer implements Serializable {
     @OneToMany(mappedBy = "offer")
     private List<Topic> topics = new ArrayList<>();
 
-    public void Offer(){}
+    public Offer(){}
 
     public Offer(Long id, String edition, Instant startMoment, Instant endMoment) {
         this.id = id;
